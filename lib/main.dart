@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blueGrey,
       ),
       home: const MyHomePage(title: 'Smiliguido'),
     );
@@ -40,42 +40,60 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar( 
-        
-        title: Text(widget.title),
-        centerTitle:true ,
-      ),
+      
       body: Center(
         child:Padding(
           padding:const EdgeInsets.all(48.0) ,
           child: Column (
             mainAxisAlignment:MainAxisAlignment.center,
             children : <Widget>[
+              const Icon(Icons.account_circle,             
+              size:200.50,
+              color:Colors.black,),
+              const SizedBox(
+                height:100 ,),
               TextFormField ( 
                 decoration :const InputDecoration(
+                  prefixIcon:Icon(Icons.person),
                   hintText: "Usuário",
                 ),
               ), 
               const SizedBox(
                 height: 40,
               ),
-                TextFormField(
-                  decoration:const InputDecoration(
-                    hintText:"Senha"
-                  )
+                TextFormField(obscureText: true,
+                  decoration:const InputDecoration( 
+                    prefixIcon:Icon(Icons.key),
+                    suffixIcon:const Icon(Icons.visibility) ,
+                    hintText:"Senha",
+                  ),
+                  
+                ),const SizedBox(height: 80.0 ,
+                width:0.0 ,
                 ),
-              ],
-            ),
+               
+                ElevatedButton(
+                   // ignore: prefer_const_constructors
+                   style: ButtonStyle(
+                   backgroundColor: const MaterialStatePropertyAll<Color>(Colors.black),
+                   ),
+                onPressed:(){}, child:Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 250,vertical:30 ),
+                  child: Text("Login".toUpperCase(),style:const TextStyle(fontSize:25,
+                  fontWeight:FontWeight.bold)
+                  ),
+                )
+                ),
+              
+            ],
           ),
-         ),
-        
-        
-       
-      floatingActionButton: FloatingActionButton(
-        onPressed:(){},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add)
-      )
+        ),
+        ),
+         
+      
     );
   }
 }
+
+
+
