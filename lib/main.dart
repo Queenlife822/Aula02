@@ -4,7 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+  class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -30,8 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  set textAlign(TextAlign textAlign) {}
-
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
               TextFormField(
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.person,color:Colors.blue,),
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Colors.blue,
+                    ),
                     hintText: "Usuário",
                     labelText: ("E-mail")),
               ),
@@ -76,11 +78,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 25,
               ),
               TextFormField(
-                obscureText: true,
-                decoration: const InputDecoration(
+                obscureText: obscureText,
+                decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.key,color:Colors.blue,),
-                    suffixIcon: const Icon(Icons.visibility,color:Colors.blue),
+                    prefixIcon: Icon(
+                      Icons.key,
+                      color: Colors.blue,
+                    ),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            obscureText = !obscureText;
+                          });
+                        },
+                        icon: Icon(
+                          obscureText ? Icons.visibility_off : Icons.visibility,
+                          color: Colors.blue,
+                        )),
                     hintText: "Senha",
                     labelText: ("Senha")),
               ),
@@ -91,7 +105,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
                   Text(
-                    "Esqueceu a senha?",style:TextStyle(color:Colors.blue,),
+                    "Esqueceu a senha?",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
                   ),
                 ],
               ),
@@ -127,7 +144,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       text: 'Clique aqui\n ',
                       style: TextStyle(color: Colors.blueAccent),
                     ),
-
                     TextSpan(
                       text: 'para criar conta ',
                       style: TextStyle(color: Colors.blueAccent),
