@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Aula02',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Smiliguido'),
     );
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const Icon(
                 Icons.account_circle,
                 size: 100.50,
-                color: Colors.black,
+                color: Colors.blue,
               ),
               const SizedBox(
                 height: 50,
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextFormField(
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.person),
+                    prefixIcon: Icon(Icons.person,color:Colors.blue,),
                     hintText: "Usuário",
                     labelText: ("E-mail")),
               ),
@@ -79,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 obscureText: true,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.key),
-                    suffixIcon: const Icon(Icons.visibility),
+                    prefixIcon: Icon(Icons.key,color:Colors.blue,),
+                    suffixIcon: const Icon(Icons.visibility,color:Colors.blue),
                     hintText: "Senha",
                     labelText: ("Senha")),
               ),
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
                   Text(
-                    "Esqueceu a senha?",
+                    "Esqueceu a senha?",style:TextStyle(color:Colors.blue,),
                   ),
                 ],
               ),
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // ignore: prefer_const_constructors
                   style: ButtonStyle(
                     backgroundColor:
-                        const MaterialStatePropertyAll<Color>(Colors.black),
+                        const MaterialStatePropertyAll<Color>(Colors.blue),
                   ),
                   onPressed: () {},
                   child: Padding(
