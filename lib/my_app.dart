@@ -1,3 +1,4 @@
+import 'package:aula02/login_page.dart';
 import 'package:aula02/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterPage(title: 'Registre-se'),
+      home: const LoginPage(title: 'Login'),
     );
   }
 }
